@@ -41,6 +41,7 @@ int main()
 	  en exp y en 'e' de 1*/
 	if (limInicio == 0 && limFinal == 0)
 	{
+<<<<<<< Updated upstream
 		resulExp = 1;
 		resulE = 1;
 		printf("%f %f %f", limInicio, resulE, resulExp);
@@ -75,6 +76,9 @@ int main()
 		printf("Calculo LI: %f \tCalculo 'E': %f \tCalculo Exp: %f\n", limInicio, resulE, resulExp);
 		limInicio = limInicio + incremento;
 		resulE = 0;
+=======
+		printf("programa calcula e");
+>>>>>>> Stashed changes
 	}
 	//aquí acaba el programa
 }
