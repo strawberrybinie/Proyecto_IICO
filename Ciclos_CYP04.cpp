@@ -5,9 +5,7 @@
 int main()
 {
 	int opc=0;
-	printf("\t\t\tCalcula... Programa\nQue desea hacer?\n");
 	printf("1. Calcular 'E'\n2. Calcular encabezado BPM\n");
-	printf("\tTeclee el numero de la opcion que desea: ");
 	scanf_s("%i", &opc);
 
 	if (opc == 1)
