@@ -1,6 +1,7 @@
 /*Crear un programa que dado un intervalo y un incremento calcule los valores del numero 'e'
   Tomando en cuenta que el programa será llamado por un bot y no por un usuario
   Por lo que no requiere de interfaz*/
+//EN ESTA PRUEBA SE USARA UNA INTERFAZ
 
   //Incluimos las bibliotecas necesarias, debido a que usaremos funciones matematicas agregamos math
 #include <stdio.h>
@@ -25,8 +26,11 @@ int main()
 	int fact;
 
 	//Haremos uso de un scanf para leer los valores que se van a ingresar
+	printf("\t\tCalcula el valor de 'e'\nIntroduce tu limite inicial: ");
 	scanf_s("%lf", &limInicio);
+	printf("Introduce el limite final: ");
 	scanf_s("%lf", &limFinal);
+	printf("Introduce el intervalo: ");
 	scanf_s("%lf", &incremento);
 	/*Al ser un incremento iniciaremos un contador que ayude al while
 	  el contador será igual a la división entre el incremento y la resta de los limites
@@ -54,7 +58,7 @@ int main()
 		resulExp = exp(limInicio);
 		/*Por ultimo imprimimos los datos en pantalla, agregamos el incremento al limite incial para que
 	      vuelva al while y se repita, de no ser así que regrese a 0*/
-		printf("%f %f %f\n", limInicio, resulE, resulExp);
+		printf("Calculo LI: %f \tCalculo 'E': %f \tCalculo Exp: %f\n", limInicio, resulE, resulExp);
 		limInicio = limInicio + incremento;
 		resulE = 0;
 	}
