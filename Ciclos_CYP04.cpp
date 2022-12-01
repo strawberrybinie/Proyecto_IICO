@@ -1,32 +1,13 @@
 /*Crear un programa que dado un intervalo y un incremento calcule los valores del numero 'e'
   Tomando en cuenta que el programa será llamado por un bot y no por un usuario
-  Por lo que no requiere de interfaz*/
-//EN ESTA PRUEBA SE USARA UNA INTERFAZ
+  Por lo que no requiere de interfaz
+  Ahora se agregara un programa que calcule el encabezado simple de un archivo BPM y con ello
+  un menu de opciones*/
 
-  //Incluimos las bibliotecas necesarias, debido a que usaremos funciones matematicas agregamos math
+//se agregan la(s) biblioteca(s)
 #include <stdio.h>
-<<<<<<< Updated upstream
-#include <math.h>
-
-int main()
-{
-	/*Primero declararemos las variables que se usarán en el programa
-	  Que serán el limite inicial, el final, el intervalo, el resultado de E,
-	  el resultado del exponencial, dos variables que almacenen datos en el while (j, z)
-	  y una que almacene los factores*/ 
-	// Algunas variables deberán ser inicializadas
-	double limInicio;
-	double limFinal;
-	double incremento;
-
-	double resulExp;
-	double resulE = 0;
-
-	int j;
-	int z;
-	int fact;
-=======
 #include <string.h>
+#include <math.h>
 
 int main()
 {
@@ -41,8 +22,49 @@ int main()
 	  o el 2, llevar al programa señalado, de no ser así, mostrar un mensaje de error*/
 	if (opc == 1)
 	{
-		//Al ser una prueba, el programa que calcula 'e' aún no será agregado
-		printf("calculo e");
+		//Agregamos el programa que calcula e con interfaz
+		double limInicio;
+		double limFinal;
+		double incremento;
+		double resulExp;
+		double resulE = 0;
+		int j;
+		int z;
+		int fact;
+		printf("\t\tCalcula el valor de 'e'\nIntroduce tu limite inicial: ");
+		scanf_s("%lf", &limInicio);
+		printf("Introduce el limite final: ");
+		scanf_s("%lf", &limFinal);
+		printf("Introduce el intervalo: ");
+		scanf_s("%lf", &incremento);
+		int conteo = (limFinal - limInicio) / incremento;
+		if (limInicio == 0 && limFinal == 0)
+		{
+			resulExp = 1;
+			resulE = 1;
+			printf("%f %f %f", limInicio, resulE, resulExp);
+			return 0;
+		}
+		else if (incremento == 0)
+		{
+			return 1;
+		}
+		while (limInicio <= limFinal + incremento)
+		{
+			for (j = 0; j <= conteo; j++)
+			{
+				fact = 1;
+				for (z = 1; z <= j; z++)
+				{
+					fact = fact * z;
+				}
+				resulE = resulE + (pow(limInicio, j)) / fact;
+			}
+			resulExp = exp(limInicio);
+			printf("Calculo LI: %f \tCalculo 'E': %f \tCalculo Exp: %f\n", limInicio, resulE, resulExp);
+			limInicio = limInicio + incremento;
+			resulE = 0;
+		}
 	}
 	else if (opc == 2)
 	{
@@ -65,44 +87,6 @@ int main()
 		printf("%c%c%08X%04i%04i%08X", 66, 77, hexaSize, bfReserved1, bfReserved2, hexaBits);
 	}
 	else printf("Valor no valido");
->>>>>>> Stashed changes
 
-	//Haremos uso de un scanf para leer los valores que se van a ingresar
-	printf("\t\tCalcula el valor de 'e'\nIntroduce tu limite inicial: ");
-	scanf_s("%lf", &limInicio);
-	printf("Introduce el limite final: ");
-	scanf_s("%lf", &limFinal);
-	printf("Introduce el intervalo: ");
-	scanf_s("%lf", &incremento);
-	/*Al ser un incremento iniciaremos un contador que ayude al while
-	  el contador será igual a la división entre el incremento y la resta de los limites
-	  para que sepa cuantas veces ingresar al while*/
-	int conteo = (limFinal - limInicio) / incremento;
-	/*La condición del while será que mientras el limite inicial sea menor o igual a la suma 
-	  del limite final con el incremento entre*/
-	while (limInicio <= limFinal + incremento)
-	{
-		/*Dentro del while agregaremos un for, donde la condición será que mientras 'j' sea menor o igual
-	      al contador entra, si esto se cumple se le agregara 1 a 'j', dentro del for iniciaremos el
-    	  factor a 1 y agregaremos otro for, con la condición de que mientras 'z' sea menor o igual
-		  a 'j' entre y	le agregue 1 a 'z'*/
-		for (j = 0; j <= conteo; j++)
-		{
-			fact = 1;
-			for (z = 1; z <= j; z++)
-			{
-				fact = fact * z;
-			}
-			/*Luego haremos el calculo del numero 'e', que es un pow del limite inicial
-			  y 'j' dividido con el factor después el resultado del exponente usando la función exp*/
-			resulE = resulE + (pow(limInicio, j)) / fact;
-		}
-		resulExp = exp(limInicio);
-		/*Por ultimo imprimimos los datos en pantalla, agregamos el incremento al limite incial para que
-	      vuelva al while y se repita, de no ser así que regrese a 0*/
-		printf("Calculo LI: %f \tCalculo 'E': %f \tCalculo Exp: %f\n", limInicio, resulE, resulExp);
-		limInicio = limInicio + incremento;
-		resulE = 0;
-	}
 	//aquí acaba el programa
 }
