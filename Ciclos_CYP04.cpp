@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*Crear un programa que dado un intervalo y un incremento calcule los valores del numero 'e'
   Tomando en cuenta que el programa será llamado por un bot y no por un usuario
   Por lo que no requiere de interfaz
@@ -5,19 +6,25 @@
   un menu de opciones*/
 
 //se agregan la(s) biblioteca(s)
+=======
+>>>>>>> Stashed changes
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
 
 int main()
 {
+<<<<<<< Updated upstream
 	//se imprime en pantalla el menu de opciones con los incisos a elegir luego un scanf que lo lea
+=======
+>>>>>>> Stashed changes
 	int opc=0;
 	printf("\t\t\tCalcula... Programa\nQue desea hacer?\n");
 	printf("1. Calcular 'E'\n2. Calcular encabezado BPM\n");
 	printf("\tTeclee el numero de la opcion que desea: ");
 	scanf_s("%i", &opc);
 
+<<<<<<< Updated upstream
 	/*se agrega un if con la condición de si se introduce el inciso 1, llevar al programa señalado
 	  o el 2, llevar al programa señalado, de no ser así, mostrar un mensaje de error*/
 	if (opc == 1)
@@ -31,6 +38,21 @@ int main()
 		int j;
 		int z;
 		int fact;
+=======
+	if (opc == 1)
+	{
+		double limInicio;
+		double limFinal;
+		double incremento;
+
+		double resulExp;
+		double resulE = 0;
+
+		int j;
+		int z;
+		int fact;
+
+>>>>>>> Stashed changes
 		printf("\t\tCalcula el valor de 'e'\nIntroduce tu limite inicial: ");
 		scanf_s("%lf", &limInicio);
 		printf("Introduce el limite final: ");
@@ -68,6 +90,7 @@ int main()
 	}
 	else if (opc == 2)
 	{
+<<<<<<< Updated upstream
 		/*cuando la condicion nos lleva al programa del bpm, declaramos los valores necesarios,
 	  el tamaño, los dos reservados, el offbits, y los tamaños en hexadecimales*/
 		int bfSize, bfReserved1, bfReserved2, bfOffBits, hexaSize, hexaBits;
@@ -75,18 +98,30 @@ int main()
 		//haremos uso de interfaz
 		printf("Medida: ");
 		//escaneamos los valores del tamaño y los bits para inicializar los otros en 0
+=======
+		int bfSize, bfReserved1, bfReserved2, bfOffBits, hexaSize, hexaBits;
+
+		printf("Medida: ");
+>>>>>>> Stashed changes
 		scanf_s("%i", &bfSize);
 		bfReserved1 = 0000;
 		bfReserved2 = 0000;
 		printf("OffBits: ");
 		scanf_s("%i", &bfOffBits);
+<<<<<<< Updated upstream
 		//Hacemos la operación que transforme nuestros numeros y los imprimimos en pantalla
+=======
+		
+>>>>>>> Stashed changes
 		hexaSize = bfSize;
 		hexaBits = bfOffBits;
 
 		printf("%c%c%08X%04i%04i%08X", 66, 77, hexaSize, bfReserved1, bfReserved2, hexaBits);
 	}
 	else printf("Valor no valido");
+<<<<<<< Updated upstream
 
 	//aquí acaba el programa
+=======
+>>>>>>> Stashed changes
 }
