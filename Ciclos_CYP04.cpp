@@ -2,17 +2,11 @@
   Tomando en cuenta que el programa será llamado por un bot y no por un usuario
   Por lo que no requiere de interfaz*/
 
-  //Incluimos las bibliotecas necesarias, debido a que usaremos funciones matematicas agregamos math
 #include <stdio.h>
 #include <math.h>
 
 int main()
 {
-	/*Primero declararemos las variables que se usarán en el programa
-	  Que serán el limite inicial, el final, el intervalo, el resultado de E,
-	  el resultado del exponencial, dos variables que almacenen datos en el while (j, z)
-	  y una que almacene los factores*/ 
-	// Algunas variables deberán ser inicializadas
 	double limInicio;
 	double limFinal;
 	double incremento;
@@ -24,22 +18,34 @@ int main()
 	int z;
 	int fact;
 
+<<<<<<< Updated upstream
 	//Haremos uso de un scanf para leer los valores que se van a ingresar
+=======
+>>>>>>> Stashed changes
 	scanf_s("%lf", &limInicio);
 	scanf_s("%lf", &limFinal);
 	scanf_s("%lf", &incremento);
-	/*Al ser un incremento iniciaremos un contador que ayude al while
-	  el contador será igual a la división entre el incremento y la resta de los limites
-	  para que sepa cuantas veces ingresar al while*/
+	
 	int conteo = (limFinal - limInicio) / incremento;
+<<<<<<< Updated upstream
 	/*La condición del while será que mientras el limite inicial sea menor o igual a la suma 
 	  del limite final con el incremento entre*/
+=======
+
+	if (limInicio == 0 && limFinal == 0)
+	{
+		resulExp = 1;
+		resulE = 1;
+		printf("%f %f %f", limInicio, resulE, resulExp);
+		return 0;
+	}
+	else if (incremento == 0)
+	{
+		return 1;
+	}
+>>>>>>> Stashed changes
 	while (limInicio <= limFinal + incremento)
 	{
-		/*Dentro del while agregaremos un for, donde la condición será que mientras 'j' sea menor o igual
-	      al contador entra, si esto se cumple se le agregara 1 a 'j', dentro del for iniciaremos el
-    	  factor a 1 y agregaremos otro for, con la condición de que mientras 'z' sea menor o igual
-		  a 'j' entre y	le agregue 1 a 'z'*/
 		for (j = 0; j <= conteo; j++)
 		{
 			fact = 1;
@@ -47,16 +53,19 @@ int main()
 			{
 				fact = fact * z;
 			}
-			/*Luego haremos el calculo del numero 'e', que es un pow del limite inicial
-			  y 'j' dividido con el factor después el resultado del exponente usando la función exp*/
 			resulE = resulE + (pow(limInicio, j)) / fact;
 		}
 		resulExp = exp(limInicio);
+<<<<<<< Updated upstream
 		/*Por ultimo imprimimos los datos en pantalla, agregamos el incremento al limite incial para que
 	      vuelva al while y se repita, de no ser así que regrese a 0*/
 		printf("%f %f %f\n", limInicio, resulE, resulExp);
+=======
+
+		printf("Calculo LI: %f \tCalculo 'E': %f \tCalculo Exp: %f\n", limInicio, resulE, resulExp);
+>>>>>>> Stashed changes
 		limInicio = limInicio + incremento;
 		resulE = 0;
 	}
-	//aquí acaba el programa
+
 }
